@@ -20,10 +20,7 @@
 }
 #nav{
     width: 100%;
-}
-div{
-    margin-right: auto;
-    margin-left: auto;
+    max-width: 1200px;
 }
 body{
     margin: 0;
@@ -68,6 +65,12 @@ p{
     color: #7c8595;
     margin-bottom: 20px;
     font-family: 'Open Sans', sans-serif;
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 a.logo{
     font-family: 'Nunito', sans-serif;
@@ -81,7 +84,7 @@ a.logo{
 }
 .navright{
     align-items: center;
-    display:none;
+    display:flex;
     float: right;
     margin-left: 180px;
     margin-top: 8px;
@@ -131,46 +134,41 @@ a{
 .bar {
     margin-right: 100px;
     float: right;
+    display: none;
 }
 
-@media only screen and (min-width: 992px) {
-    .navright {
-        display: flex;
-    }
-
-    .bar {
-        display: none;
-    }
-    #nav{
-        width: auto;
-    }
-    a.logo{
-        margin-left: 0px;
-    }
+.hct-bn{
+    width: 100%;
+    background: #000;
+    opacity: 0.39;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
-
 #home-content{
     background: url(../Images/bg0.jpg) top center no-repeat;
-    background-size:cover;
-    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    z-index: 999;
+    padding-top: 140px;
+    padding-bottom: 110px;
+    background-size: cover;
 }
 .hcnt{
     padding:50px 0 50px 0;
     display: flex;
     position: relative;
     z-index: 999;
-    padding-top: 140px;
-    padding-bottom: 110px;
     max-width: 1200px;
 }
 .homeform{
-    padding:50px;
-    margin: 0 5% 0 5%;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-    background-color: #FFF;
-    border-radius: 10px;
+    display: block;
+    margin-top: 25px;
+    max-width: 40%;
+    padding: 40px 40px;
+    background: rgba(255,255,255,1);
+    border-radius: 5px 5px;
 }
 .home-text{
     display: flex;
@@ -224,6 +222,39 @@ a{
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+input.register-input{
+    width: 100%!important;
+    height: 52px!important;
+    padding-left: 11%!important;
+    padding-right: 5%!important;
+    margin-bottom: 15px!important;
+    color: #555!important;
+    border: 1px solid #f1f1f1!important;
+    background-color: #f9f9f9!important;
+    font-size: 16px!important;
+    border-radius: 5px 5px 5px 5px!important;
+}
+
+input.name-email{
+    background: url(../Images/input-envelope.png) no-repeat 12px 15px;
+}
+input.name-input{
+    background: url(../Images/input-user.png) no-repeat 12px 15px;
+}
+select.register-input{
+    background: url(../Images/input-select.png) no-repeat 12px 15px;
+    width: 100%!important;
+    height: 52px!important;
+    padding-left: 11%!important;
+    padding-right: 5%!important;
+    margin-bottom: 15px!important;
+    color: #555!important;
+    border: 1px solid #f1f1f1!important;
+    background-color: #f9f9f9!important;
+    font-size: 16px!important;
+    border-radius: 5px 5px 5px 5px!important;
+}
   
 .homeform input[type=submit] {
     background: #e52f37;
@@ -235,8 +266,12 @@ a{
     font-size: 14px;
     font-weight: 700;
     width: 100%;
+    max-width: 535px;
     padding: 16px 0;
     text-transform: uppercase;
+    -webkit-border-radius: 3px 3px;
+    -moz-border-radius: 3px 3px;
+    border-radius: 3px 3px;
     transition: all .50s ease-in-out;
     -moz-transition: all .50s ease-in-out;
     -webkit-transition: all .50s ease-in-out;
@@ -244,7 +279,7 @@ a{
   
 .homeform input[type=submit]:hover {
     background-color: #45a049;
-  }
+}
 .homeform input{
     display: flex;
     float: left;
@@ -272,6 +307,15 @@ a{
 .homeform form{
     width: 90%;
     margin-left: 5%;
+}
+
+.homeform p.register-form-term{
+    display: block;
+    margin-top: 20px!important;
+    margin: 10px 0 5px 0;
+    font-size: 14px;
+    color: #7c8595;
+    text-shadow: none;
 }
 
 .video-play-button {
@@ -452,8 +496,6 @@ img.partners{
     position: relative;
     min-height: 1px;
     padding: 0 25px 0 25px;
-    display: block;
-    float: left;
 }
 .s2-ul li{
     font-size: 17px;
@@ -826,7 +868,6 @@ img.partners{
     border-radius: 8px 8px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
-    -webkit-backface-visibility: hidden;
 }
 .price-box-red{
     text-align: center;
@@ -841,7 +882,6 @@ img.partners{
     border-radius: 8px 8px;
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
-    -webkit-backface-visibility: hidden;
 
 }
 li.price-title{
@@ -915,7 +955,7 @@ input.contact-input{
     width: 100%;
 }
 .contactus-f .rowcontent{
-    width: 80%;
+    width: 75%;
     padding-bottom: 0px!important;
 }
 
@@ -925,7 +965,7 @@ input.contact-input{
 textarea{
     height: 145px;
     margin-bottom: 12px;
-    width: 76%;
+    width: 72%;
     padding-left: 2%;
     padding-right: 2%;
     padding-top: 10px;
@@ -970,8 +1010,11 @@ textarea::placeholder{
     padding: 40px 0 20px 0;
     background-color: #fafbfc;
 }
+div{
+    margin-left: auto;
+    margin-right: auto;
+}
 .footer>div{
-    max-width: 1200px;
     display: flex;
     justify-content: space-between;
 }
@@ -1006,4 +1049,52 @@ ul.footer_social li a i {
     transition: all .5s ease-in-out;
     -moz-transition: all .25s ease-in-out;
     -webkit-transition: all .25s ease-in-out;
+}
+#nav{
+    width: auto;
+}
+a.logo{
+    margin-left: 0px;
+}
+@media only screen and (max-width: 992px) {
+    .navright {
+        display: none;
+    }
+
+    .bar {
+        display: block;
+    }
+    #nav{
+        width: 100%;
+    }
+    a.logo{
+        margin-left: 5%;
+    }
+    
+    .hcnt,#service-wrapper,.section,.rowwcontent,.footer>div{
+        flex-direction: column;
+    }
+    .s2-left{
+        margin: auto;
+    }
+    .footer>div{
+        justify-content: center;
+        align-items: center;
+    }
+    .s2-right{
+        margin-top: 50px;
+    }
+    .content-sw{
+        max-width: 100%;
+    }
+    .rowcontent{
+        flex-wrap: wrap;
+    }
+    .homeform{
+        max-width: 80%;
+    }
+    textarea{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
 }
